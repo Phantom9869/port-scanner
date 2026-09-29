@@ -361,7 +361,6 @@ if __name__ == "__main__":
                         help="Save report; format inferred from extension (.json or .txt)")
 
     args = parser.parse_args()
-
     try:
         port_list = _resolve_ports(
             args.profile,
@@ -380,7 +379,6 @@ if __name__ == "__main__":
                                 args.timeout, args.threads, args.show_filtered)
             if args.output:
                 result.save(args.output)
-
     except ValueError as e:
         print(f"\n  Error: {e}", file=sys.stderr)
         sys.exit(1)
